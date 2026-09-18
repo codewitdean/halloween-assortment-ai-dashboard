@@ -132,14 +132,12 @@ The public edition retains four pages, interactive charts, filters, product
 details, and deterministic evidence Q&A. Rationale drafts are read-only;
 approvals and live AI calls remain available only in the local server edition.
 Updating the published workbook requires a successful rebuild and deployment.
-The repository is private; data embedded in the deployed dashboard is public.
+The repository and deployed dashboard are public.
 
 Run `npx playwright test --config playwright.pages.config.ts` after the static
 build to verify the repository base path and server-free interactions locally.
 Set `PAGES_URL` to the exact deployed URL to run the same check against the live site.
 
-Deployment status: GitHub currently rejects Pages activation for this private
-repository because the account plan does not support it. The prepared workflow
-is manual (`workflow_dispatch`) until Pages is available. After upgrading, set
-Pages source to GitHub Actions and run the workflow. No live site or QR code is
-available yet.
+GitHub Pages uses GitHub Actions as its deployment source. Pushes to `main`
+run validation, build and browser checks before deployment. The workflow can
+also be started manually from the Actions tab.
